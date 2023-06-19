@@ -226,7 +226,7 @@ const About = () => {
               </ContactLeftContainer>
             </ContactRight>
           </ContactContainer>
-          <Download href={LebensLauft} downloaad={LebensLauft}>
+          <Download href={LebensLauft} target="_blank" downloaad={LebensLauft}>
             <Button>DOWNLOAD CV</Button>
           </Download>
         </Right>
