@@ -172,9 +172,23 @@ const Image = styled.img`
     }
   }
 `;
-const ItemTitle = styled.h3`
+const ItemTitle = styled.span`
   position: absolute;
   margin: 0;
+  font-weight: bold;
+  z-index: 0.2;
+  @media (max-width: 1364px) {
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 1202px) {
+    padding: 2rem;
+    font-size: 0.7rem;
+  }
+  @media (max-width: 550px) {
+    padding: 4rem;
+    font-size: 0.8rem;
+  }
 `;
 const Title = styled.p`
   padding: 2rem;
