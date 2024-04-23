@@ -187,7 +187,7 @@ const ScrollContainer = styled.div`
 
   @keyframes arrowBlink {
     100% {
-      opacity: 0.25;
+      opacity: 0.26;
     }
   }
 `;
