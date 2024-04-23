@@ -21,8 +21,12 @@ const Container = styled.div`
 const TitleContent = styled.h1`
   font-size: 4rem;
   text-transform: uppercase;
+  @media (max-width: 640px) {
+    text-align: center;
+  }
   @media (max-width: 420px) {
     font-size: 2.5rem;
+    text-align: center;
   }
 `;
 const Left = styled.div`
@@ -108,15 +112,15 @@ const ContactInfos = styled.p`
 `;
 const ContactTitleInformation = styled.p`
   font-size: 1.2rem;
-  padding: 0 3rem;
+  padding: 0 0rem;
   @media (max-width: 1868px) {
-    padding: 0rem 3.2rem;
+    padding: 0rem 0rem;
   }
   @media (max-width: 932px) {
-    padding: 2rem 8rem;
+    padding: 2rem 0rem;
   }
   @media (max-width: 868px) {
-    padding: 2rem 4rem;
+    padding: 2rem 0rem;
   }
   @media (max-width: 720px) {
     padding: 2rem 0rem;
@@ -129,6 +133,7 @@ const ContactTitleInformation = styled.p`
 const Form = styled.form`
   height: 100%;
   display: flex;
+  width: 100%;
   justify-content: center;
   flex-direction: column;
   @media (max-width: 675px) {

@@ -11,6 +11,7 @@ import {
   SiThreedotjs,
   SiExpress,
   SiAdobecreativecloud,
+  SiWordpress,
 } from 'react-icons/si';
 import { Link } from 'react-scroll';
 
@@ -268,6 +269,7 @@ const Banner = () => {
             <IoLogoNodejs style={nodeStyle} />
             <SiExpress style={siStyle} />
             <SiThreedotjs style={threeStyle} />
+            <SiWordpress style={threeStyle} />
             <SiAdobecreativecloud style={adobeStyle} />
           </IconsContainer>
         </ContentContainer>

@@ -162,6 +162,11 @@ const Button = styled.button`
 `;
 const Download = styled.a``;
 const About = () => {
+  const birthDate = new Date('1970-01-01');
+  const dateDiff = Date.now() - birthDate.getTime() ;
+  const ageYear = new Date(dateDiff);
+  const fullDate = Math.abs(ageYear.getUTCFullYear() - 1979);
+  console.log(fullDate)
   return (
     <Container id="about">
       <TitleContent>About me</TitleContent>
@@ -190,7 +195,7 @@ const About = () => {
               <ContactLeftContainer>
                 <ContactTitle>Age</ContactTitle>
                 <ContactInfos> |</ContactInfos>
-                <ContactInfos> 44 years </ContactInfos>
+                <ContactInfos> {fullDate} years </ContactInfos>
               </ContactLeftContainer>
               <ContactLeftContainer>
                 <ContactTitle>Residence</ContactTitle>

@@ -169,8 +169,8 @@ const PopUpContainer = styled.div`
   background-color: white;
   z-index: 20;
   margin: 0;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -189,6 +189,8 @@ const PopUpContainer = styled.div`
   }
   @media (max-width: 830px) {
     width: 100%;
+    height: 80%;
+    overflow: auto;
   }
 `;
 const PopUpImage = styled.img`
@@ -198,16 +200,30 @@ const PopUpImage = styled.img`
   object-position: bottom;
 `;
 const PopUpTitle = styled.h1`
+margin-top: 1rem;
+
   @media (max-width: 350px) {
     font-size: 1.5rem;
   }
 `;
 const ClosePopUpContainer = styled.div`
+margin-top: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 1rem;
+  background-color: #fff;
+  @media (max-width: 1020px) {
+   position: fixed;
+   top: -2%;
+   margin:0;
+  }
+  @media (max-width: 850px) {
+   position: fixed;
+   top: -2%;
+   margin:0;
+  }
 `;
 const PopUpButton = styled.button`
   border: none;
@@ -225,7 +241,6 @@ const closeStyle = {
   cursor: 'pointer',
 };
 const Download = styled.a`
-  position: absolute;
   padding: 0.5rem 0.8rem;
   background-color: #cdeef3;
   color: black;
@@ -234,7 +249,7 @@ const Download = styled.a`
   border: none;
   cursor: pointer;
   text-transform: uppercase;
-  position: relative;
+
   border-radius: 0.2rem;
   transition: all 0.5s ease-in-out;
   text-decoration: none;
@@ -246,14 +261,15 @@ const Download = styled.a`
 `;
 const InfosContainer = styled.div`
   position: absolute;
-  width: 100%;
+  width: 55%;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  top: 30%;
-  height: 70%;
-  background-color: #212122;
+  top: 15%;
+  left: 1%;
+ height: calc(60% -40%);
+  background-color: #212122fb;
   color: white;
   padding: 1rem 0rem;
 
@@ -264,9 +280,11 @@ const InfosContainer = styled.div`
     font-size: 1rem;
     padding: 1rem 0;
   }
-  @media (max-width: 550px) {
+  @media (max-width: 850px) {
     top: 15%;
-    height: 100%;
+    height: 90%;
+    width: 100%;
+    top: 12%;
   }
 `;
 
@@ -299,7 +317,6 @@ const Works = () => {
     const found = allDetails.find((element) => element.id === index);
     setOpenPopUp(!openPopUp);
     setDetails(found);
-    console.log(found);
   };
   return (
     <Container id="works">
@@ -359,7 +376,7 @@ const Works = () => {
         })}
       </Swiper>
       {openPopUp && (
-        <PopUp>
+        <PopUp >
           <PopUpContainer>
             <ClosePopUpContainer>
               <PopUpTitle>{details.title}</PopUpTitle>
@@ -369,14 +386,14 @@ const Works = () => {
             <InfosContainer>
               <InfoText>{details.infos}</InfoText>
               <PopUpButton>
+              </PopUpButton>
                 <Download
                   href={details.music}
                   target="_blank"
                   downloaad={details.music}
-                >
+                  onClick={handleDetail} >
                   explore or visit
                 </Download>
-              </PopUpButton>
             </InfosContainer>
           </PopUpContainer>
         </PopUp>

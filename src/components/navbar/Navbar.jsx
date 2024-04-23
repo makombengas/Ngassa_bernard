@@ -15,6 +15,7 @@ const Container = styled.div`
     padding: 1rem;
     background-color: white;
     color: black;
+  
   }
 `;
 const ComputerContainer = styled.div`
@@ -88,6 +89,9 @@ const UlHandyContainer = styled.div`
   left: 0;
   padding-top: 5rem;
   background-color: white;
+  @media (max-width: 550px) {
+  z-Index:500;
+  }
 `;
 const Li = styled(Link)`
   list-style: none;
@@ -151,7 +155,7 @@ const MenuIconsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: pointer;   
 `;
 const Download = styled.a``;
 const ScrollTopContainer = styled(Link)`
@@ -161,16 +165,25 @@ const ScrollTopContainer = styled(Link)`
   font-size: 3rem;
   background-color: #cdeef3;
   color: black;
-  width: 3.5rem;
+  width: 3rem;
   height: 3.5rem;
   text-align: center;
   border-radius: 0.15rem;
   cursor: pointer;
+  @media (max-width: 550px) {    
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;
 const ScrollContainer = styled.div`
-  width: 3.5rem;
-  height: 3.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   animation: arrowBlink 2s infinite;
+ 
+  @media (max-width: 550px) {    
+   font-size: 2rem;
+   font-weight: 1.5rem;
+  }
 
   @keyframes arrowBlink {
     100% {
@@ -178,6 +191,10 @@ const ScrollContainer = styled.div`
     }
   }
 `;
+
+const style ={
+  fontSize: "2.5rem",
+}
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [noTop, setNoTop] = useState(false);
@@ -353,9 +370,9 @@ const Navbar = () => {
         )}
         <MenuIconsContainer>
           {openMenu ? (
-            <AiOutlineClose onClick={() => setOpenMenu(false)} />
+            <AiOutlineClose style={style} onClick={() => setOpenMenu(false)} />
           ) : (
-            <AiOutlineMenu onClick={() => setOpenMenu(true)} />
+            <AiOutlineMenu style={style} onClick={() => setOpenMenu(true)} />
           )}
         </MenuIconsContainer>
       </HandyContainer>
